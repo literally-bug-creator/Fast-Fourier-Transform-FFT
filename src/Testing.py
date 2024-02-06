@@ -20,11 +20,40 @@ def data_to_int(data: list[int]) -> int:
     return int("".join(map(str, data)))
 
 
-class MultiplicationTest(TestCase):
+class RandomMultiplicationTest(TestCase):
     def test_random_numbers(self):
         for i in range(500):
             left: list[int] = generate_data(randint(1, 1000))
             right: list[int] = generate_data(randint(1, 1000))
+
+            ct_result: list[int] = ct_multiply(left, right)
+            mod_result: list[int] = mod_multiply(left, right)
+            int_result = data_to_int(left) * data_to_int(right)
+
+            self.assertEqual(ct_result, mod_result)
+            self.assertEqual(data_to_int(ct_result), int_result)
+
+    def test_equal_degree_numbers(self):
+        for i in range(500):
+            degree: int = randint(1, 1000)
+
+            left: list[int] = generate_data(degree)
+            right: list[int] = generate_data(degree)
+
+            ct_result: list[int] = ct_multiply(left, right)
+            mod_result: list[int] = mod_multiply(left, right)
+            int_result = data_to_int(left) * data_to_int(right)
+
+            self.assertEqual(ct_result, mod_result)
+            self.assertEqual(data_to_int(ct_result), int_result)
+
+    def test_different_degree_numbers(self):
+        for i in range(500):
+            left_degree: int = randint(1, 950)
+            right_degree: int = randint(left_degree + 1, 1000)
+
+            left: list[int] = generate_data(left_degree)
+            right: list[int] = generate_data(right_degree)
 
             ct_result: list[int] = ct_multiply(left, right)
             mod_result: list[int] = mod_multiply(left, right)
