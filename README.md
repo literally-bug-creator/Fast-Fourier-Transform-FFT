@@ -14,4 +14,4 @@ There are many different FFT algorithms based on a wide range of published theor
 ## Where is this operation most commonly used?
 **Fast Fourier** transforms are widely used for applications in engineering, music, science, and mathematics.
 The basic ideas were popularized in 1965, but some algorithms had been derived as early as 1805.
-In 1994, Gilbert Strang described the FFT as "the most important numerical algorithm of our lifetime", and it was included in Top 10 Algorithms of 20th Century by the IEEE magazine Computing in Science & Engineering.
+In 1994, Gilbert Strang described the FFT as "***the most important numerical algorithm of our lifetime***", and it was included in Top 10 Algorithms of 20th Century by the IEEE magazine Computing in Science & Engineering.
